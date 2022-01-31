@@ -7,10 +7,11 @@ import { PhotoService } from '../photo.service';
   styleUrls: ['./photo-button.component.css']
 })
 export class PhotoButtonComponent implements OnInit {
+  photoUrl: string = '';
 
   constructor(private photoservice: PhotoService) {
-    this.photoservice.getPhoto().subscribe(() => {
-      
+    this.photoservice.getPhoto().subscribe((response) => {
+      this.photoUrl = response.urls.regular;
     });
   }
 
