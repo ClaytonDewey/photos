@@ -1,1 +1,4 @@
-<img [src]="photoUrl">
+<div>
+  <button (click)="onClick()">Fetch new photo</button>
+</div>
+<img *ngIf="photoUrl" [src]="photoUrl">
